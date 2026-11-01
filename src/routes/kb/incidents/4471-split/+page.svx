@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · two date failures in one ticket'
 owner: challenge pair
-status: reviewed
+status: closed
 reviewed: 2026-11-01
 signature: 'mkuczera + harness · S01E03'
 ---
@@ -12,12 +12,16 @@ signature: 'mkuczera + harness · S01E03'
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-The desk merged date reports into [#4471](/kb/incidents/4471) and called it one known parser issue. The exported reports and tenant settings show two causes. The original page and its queued fix should not be treated as a complete account of the ticket.
+The desk merged date reports into [#4471](/kb/incidents/4471) and called it one known parser issue. The exported reports and tenant settings show two causes. Engineering closed #4471 with a different outcome for each.
 
 <Split4471
   parserIssue="https://github.com/mkuczera/mega-s01e03-what-it-shows/issues/1"
   hintIssue="https://github.com/mkuczera/mega-s01e03-what-it-shows/issues/2"
+  parserOutcome="completed"
+  hintOutcome="not planned"
 />
+
+**Engineering update, 5 October 2026.** The desk closed #4471. The parser was fixed by `fix(dates): parse dd/mm for eu locales`. The booking-v3 hint will not be fixed because that form was retired. The counts above describe the 4 October export, not post-fix traffic.
 
 ## What differs
 
