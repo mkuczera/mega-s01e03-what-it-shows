@@ -4,7 +4,7 @@ title: '#4471 · two date failures in one ticket'
 owner: challenge pair
 status: closed
 reviewed: 2026-11-01
-signature: 'mkuczera + harness · S01E03'
+signature: 'v1.eyJzdWIiOiIzNjM3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM1NDE1NTUsImV4cCI6MTc5MzYyNzk1NX0.7BQ6PFMC853rxYdnwHFW8J-qWGD0PB0TyKSKSc_AzRQ'
 ---
 
 <script>
