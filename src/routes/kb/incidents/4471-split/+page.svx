@@ -1,0 +1,34 @@
+---
+layout: runbook
+title: '#4471 · two date failures in one ticket'
+owner: challenge pair
+status: reviewed
+reviewed: 2026-11-01
+signature: 'mkuczera + harness · S01E03'
+---
+
+<script>
+  import Split4471 from '#lib/kb/Split4471.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The desk merged date reports into [#4471](/kb/incidents/4471) and called it one known parser issue. The exported reports and tenant settings show two causes. The original page and its queued fix should not be treated as a complete account of the ticket.
+
+<Split4471
+  parserIssue="https://github.com/mkuczera/mega-s01e03-what-it-shows/issues/1"
+  hintIssue="https://github.com/mkuczera/mega-s01e03-what-it-shows/issues/2"
+/>
+
+## What differs
+
+**Parser.** The shared parser reads month first even when a tenant writes day first. App and email reports, plus some form reports, describe dates that flip between booking and invite or reminder.
+
+**Booking-v3 hint.** For day-first tenants, booking-v3 prints `MM/DD/YYYY` under the date field. People enter what the hint asks for, and the form reads it in the tenant's date order. Changing the shared parser alone will not correct that instruction.
+
+The desk's `oneDayMove` notes list five reports that were read as one-day moves but filed under the parser cause by tenant. They remain in that count. Review them during diagnosis; this export does not establish a third cause.
+
+## Triage decision
+
+Track one issue for each cause, with a distinct report count. Group by `causeOf` after deduplicating report IDs; do not use the old subject-only merge rule or intake tags as proof of cause. The accepted [decision 0001](/kb/decisions/0001-dedupe-by-subject) remains a record of what the desk once chose. A new decision record should replace it if the desk changes its rule.
+
+<RenderStamp {signature} />
